@@ -1,0 +1,46 @@
+﻿@using LifeBalance.Models;
+@model User
+
+
+  <link rel="stylesheet" href="~/css/style.css"/>
+
+<p style="font-size:50px;color:#e75480;">Life Balance</p><br>  <h4><i>This assessment tool helps you understand balance in your life.</i></h4>
+         
+              
+<br>
+<a asp-action="sign" asp-controller="Home">Already have an account?</a><br>
+<form class="col-5" asp-action="Register" asp-controller="Home" method="post">
+    <div class="form-group">
+        <span asp-validation-for="FirstName"></span><br>         
+        <label asp-for="FirstName"></label>
+        <input asp-for="FirstName" class="form-control">
+    </div>
+      <div class="form-group">
+        <span asp-validation-for="LastName"></span><br>
+        <label asp-for="LastName"></label>
+         <input asp-for="LastName" class="form-control">
+    </div>
+      <div class="form-group">
+        <span asp-validation-for="Email"></span><br>
+        <label asp-for="Email"></label>
+         <input asp-for="Email" class="form-control">
+    </div>
+      <div class="form-group">
+        <span asp-validation-for="Password"></span><br>
+        <label asp-for="Password"></label>
+         <input asp-for="Password" class="form-control">
+    </div>
+     <div class="form-group">
+        <span asp-validation-for="ConfirmPassword"></span><br>
+        <label asp-for="ConfirmPassword"></label>
+         <input asp-for="ConfirmPassword" class="form-control"><br>
+    </div>
+     <div class="form-group"><br>
+     
+         <input type="submit" class="btn btn-outline-danger" value="Register">
+      </form>
+    </div>
+
+
+
+

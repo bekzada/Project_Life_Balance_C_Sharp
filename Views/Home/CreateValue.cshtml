@@ -1,0 +1,244 @@
+@using LifeBalance.Models
+@model Values
+<link rel="stylesheet" href="~/css/style.css"/>
+<a class="btn btn-outline-danger" href="../Dashboard" >Dashboard</a>
+
+                <h5 style="font-size:40px;color:#7e0909">Let's evaluate your most important  8 areas in life</h5>
+                 <h5>1. Write your 8 most important areas in life (F:health, career, love, spirituality, family, money, fun, friends, etc)</h3><h5>2.How would you rate these areas of your life?  1 (terrible)  to 10(awesome).</h5>
+                 <h5>3. If you want, you can prioritize your areas by starting most valuble one...if not ..it is fine</h5>
+    <div asp-validation-summary="All" ></div>
+     <form asp-action="AddValue" asp-controller="Home" method="post">   
+            <div class="form-group">
+                <span asp-validation-for="Title1"></span>
+                <label asp-for="Title1"></label>
+                <input asp-for="Title1" class="form-control">
+            
+        
+                @* <div class="form-check form-check-inline"> *@
+            
+                    <label style="margin-left: 10px;" asp-for="Rating1">1</label>
+                    <input type="radio" asp-for="Rating1" value=1>
+                    <label style="margin-left: 10px;" asp-for="Rating1">2</label>
+                    <input type="radio" asp-for="Rating1" value=2> 
+                    <label style="margin-left: 10px;" asp-for="Rating1">3</label>
+                    <input type="radio" asp-for="Rating1" value=3> 
+                    <label style="margin-left: 10px;" asp-for="Rating1">4</label>
+                    <input type="radio" asp-for="Rating1" value=4> 
+                    <label style="margin-left: 10px;" asp-for="Rating1">5</label>
+                    <input type="radio" asp-for="Rating1" value=5> 
+                    <label style="margin-left: 10px;" asp-for="Rating1">6</label>
+                    <input type="radio" asp-for="Rating1" value=6> 
+                    <label style="margin-left: 10px;" asp-for="Rating1">7</label>
+                    <input type="radio" asp-for="Rating1" value=7> 
+                    <label style="margin-left: 10px;" asp-for="Rating1">8</label>
+                    <input type="radio" asp-for="Rating1" value=8> 
+                    <label style="margin-left: 10px;" asp-for="Rating1">9</label>
+                    <input type="radio" asp-for="Rating1" value=9>
+                    <label style="margin-left: 10px;" asp-for="Rating1">10</label>
+                    <input type="radio" asp-for="Rating1" value=10> 
+                        
+            </div>
+            <div class="form-group">
+                <span asp-validation-for="Title2"></span>
+                <label asp-for="Title2"></label>
+                <input asp-for="Title2" class="form-control">
+
+                    <label style="margin-left: 10px;" asp-for="Rating2">1</label>
+                    <input type="radio" asp-for="Rating2" value=1>
+                    <label style="margin-left: 10px;" asp-for="Rating2">2</label>
+                    <input type="radio" asp-for="Rating2" value=2> 
+                    <label style="margin-left: 10px;" asp-for="Rating2">3</label>
+                    <input type="radio" asp-for="Rating2" value=3> 
+                    <label style="margin-left: 10px;" asp-for="Rating2">4</label>
+                    <input type="radio" asp-for="Rating1" value=4> 
+                    <label style="margin-left: 10px;" asp-for="Rating2">5</label>
+                    <input type="radio" asp-for="Rating2" value=5> 
+                    <label style="margin-left: 10px;" asp-for="Rating2">6</label>
+                    <input type="radio" asp-for="Rating2" value=6> 
+                    <label style="margin-left: 10px;" asp-for="Rating2">7</label>
+                    <input type="radio" asp-for="Rating2" value=7> 
+                    <label style="margin-left: 10px;" asp-for="Rating2">8</label>
+                    <input type="radio" asp-for="Rating2" value=8>
+                     <label style="margin-left: 10px;" asp-for="Rating2">9</label>
+                    <input type="radio" asp-for="Rating2" value=9> 
+                    <label style="margin-left: 10px;" asp-for="Rating2">10</label>
+                    <input type="radio" asp-for="Rating2" value=10>
+                     
+
+                     
+            </div>
+            <div class="form-group">
+                <span asp-validation-for="Title3"></span>
+                <label asp-for="Title3"></label>
+                <input asp-for="Title3" class="form-control">
+
+                    <label style="margin-left: 10px;" asp-for="Rating3">1</label>
+                    <input type="radio" asp-for="Rating3" value=1>
+                    <label style="margin-left: 10px;" asp-for="Rating3">2</label>
+                    <input type="radio" asp-for="Rating3" value=2> 
+                    <label style="margin-left: 10px;" asp-for="Rating3">3</label>
+                    <input type="radio" asp-for="Rating3" value=3> 
+                    <label style="margin-left: 10px;" asp-for="Rating3">4</label>
+                    <input type="radio" asp-for="Rating3" value=4> 
+                    <label style="margin-left: 10px;" asp-for="Rating3">5</label>
+                    <input type="radio" asp-for="Rating3" value=5> 
+                    <label style="margin-left: 10px;" asp-for="Rating3">6</label>
+                    <input type="radio" asp-for="Rating3" value=6> 
+                    <label style="margin-left: 10px;" asp-for="Rating3">7</label>
+                    <input type="radio" asp-for="Rating3" value=7> 
+                    <label style="margin-left: 10px;" asp-for="Rating3">8</label>
+                    <input type="radio" asp-for="Rating3" value=8>
+                    <label style="margin-left: 10px;" asp-for="Rating3">9</label>
+                    <input type="radio" asp-for="Rating3" value=9> 
+                    <label style="margin-left: 10px;" asp-for="Rating3">10</label>
+                    <input type="radio" asp-for="Rating3" value=10> 
+            </div>
+            <div class="form-group">
+                <span asp-validation-for="Title4"></span>
+                <label asp-for="Title4"></label>
+                <input asp-for="Title4" class="form-control">
+
+                    <label style="margin-left: 10px;" asp-for="Rating4">1</label>
+                    <input type="radio" asp-for="Rating4" value=1>
+                    <label style="margin-left: 10px;" asp-for="Rating4">2</label>
+                    <input type="radio" asp-for="Rating4" value=2> 
+                    <label style="margin-left: 10px;" asp-for="Rating4">3</label>
+                    <input type="radio" asp-for="Rating4" value=3> 
+                    <label style="margin-left: 10px;" asp-for="Rating4">4</label>
+                    <input type="radio" asp-for="Rating4" value=4> 
+                    <label style="margin-left: 10px;" asp-for="Rating4">5</label>
+                    <input type="radio" asp-for="Rating4" value=5> 
+                    <label style="margin-left: 10px;" asp-for="Rating4">6</label>
+                    <input type="radio" asp-for="Rating4" value=6> 
+                    <label style="margin-left: 10px;" asp-for="Rating4">7</label>
+                    <input type="radio" asp-for="Rating4" value=7> 
+                    <label style="margin-left: 10px;" asp-for="Rating4">8</label>
+                    <input type="radio" asp-for="Rating4" value=8>
+                    <label style="margin-left: 10px;" asp-for="Rating4">9</label>
+                    <input type="radio" asp-for="Rating4" value=9> 
+                    <label style="margin-left: 10px;" asp-for="Rating4">10</label>
+                    <input type="radio" asp-for="Rating4" value=10> 
+            </div>
+            <div class="form-group">
+                <span asp-validation-for="Title5"></span>
+                <label asp-for="Title5"></label>
+                <input asp-for="Title5" class="form-control">
+
+                    <label style="margin-left: 10px;" asp-for="Rating5">1</label>
+                    <input type="radio" asp-for="Rating5" value=1>
+                    <label style="margin-left: 10px;" asp-for="Rating5">2</label>
+                    <input type="radio" asp-for="Rating5" value=2> 
+                    <label style="margin-left: 10px;" asp-for="Rating5">3</label>
+                    <input type="radio" asp-for="Rating5" value=3> 
+                    <label style="margin-left: 10px;" asp-for="Rating5">4</label>
+                    <input type="radio" asp-for="Rating5" value=4> 
+                    <label style="margin-left: 10px;" asp-for="Rating5">5</label>
+                    <input type="radio" asp-for="Rating5" value=5> 
+                    <label style="margin-left: 10px;" asp-for="Rating5">6</label>
+                    <input type="radio" asp-for="Rating5" value=6> 
+                    <label style="margin-left: 10px;" asp-for="Rating5">7</label>
+                    <input type="radio" asp-for="Rating5" value=7> 
+                    <label style="margin-left: 10px;" asp-for="Rating5">8</label>
+                    <input type="radio" asp-for="Rating5" value=8> 
+                     <label style="margin-left: 10px;" asp-for="Rating5">9</label>
+                    <input type="radio" asp-for="Rating5" value=9> 
+                    <label style="margin-left: 10px;" asp-for="Rating5">10</label>
+                    <input type="radio" asp-for="Rating5" value=10>
+            </div>
+            <div class="form-group">
+                <span asp-validation-for="Title6"></span>
+                <label asp-for="Title6"></label>
+                <input asp-for="Title6" class="form-control">
+
+                    <label style="margin-left: 10px;" asp-for="Rating6">1</label>
+                    <input type="radio" asp-for="Rating6" value=1>
+                    <label style="margin-left: 10px;" asp-for="Rating6">2</label>
+                    <input type="radio" asp-for="Rating6" value=2> 
+                    <label style="margin-left: 10px;" asp-for="Rating6">3</label>
+                    <input type="radio" asp-for="Rating6" value=3> 
+                    <label style="margin-left: 10px;" asp-for="Rating6">4</label>
+                    <input type="radio" asp-for="Rating6" value=4> 
+                    <label style="margin-left: 10px;" asp-for="Rating6">5</label>
+                    <input type="radio" asp-for="Rating6" value=5> 
+                    <label style="margin-left: 10px;" asp-for="Rating6">6</label>
+                    <input type="radio" asp-for="Rating6" value=6> 
+                    <label style="margin-left: 10px;" asp-for="Rating6">7</label>
+                    <input type="radio" asp-for="Rating6" value=7> 
+                    <label style="margin-left: 10px;" asp-for="Rating6">8</label>
+                    <input type="radio" asp-for="Rating6" value=8> 
+                      <label style="margin-left: 10px;" asp-for="Rating6">9</label>
+                    <input type="radio" asp-for="Rating6" value=9> 
+                    <label style="margin-left: 10px;" asp-for="Rating6">10</label>
+                    <input type="radio" asp-for="Rating6" value=10>
+            </div>
+            <div class="form-group">
+                <span asp-validation-for="Title7"></span>
+                <label asp-for="Title7"></label>
+                <input asp-for="Title7" class="form-control">
+
+                    <label style="margin-left: 10px;" asp-for="Rating7">1</label>
+                    <input type="radio" asp-for="Rating7" value=1>
+                    <label style="margin-left: 10px;" asp-for="Rating7">2</label>
+                    <input type="radio" asp-for="Rating7" value=2>
+                    <label style="margin-left: 10px;" asp-for="Rating7">3</label>
+                    <input type="radio" asp-for="Rating7" value=3> 
+                    <label style="margin-left: 10px;" asp-for="Rating7">4</label>
+                    <input type="radio" asp-for="Rating7" value=4> 
+                    <label style="margin-left: 10px;" asp-for="Rating7">5</label>
+                    <input type="radio" asp-for="Rating7" value=5> 
+                    <label style="margin-left: 10px;" asp-for="Rating7">6</label>
+                    <input type="radio" asp-for="Rating7" value=6> 
+                    <label style="margin-left: 10px;" asp-for="Rating7">7</label>
+                    <input type="radio" asp-for="Rating7" value=7> 
+                    <label style="margin-left: 10px;" asp-for="Rating7">8</label>
+                    <input type="radio" asp-for="Rating7" value=8> 
+                    <label style="margin-left: 10px;" asp-for="Rating7">9</label>
+                    <input type="radio" asp-for="Rating7" value=9>
+                    <label style="margin-left: 10px;" asp-for="Rating7">10</label>
+                    <input type="radio" asp-for="Rating7" value=10> 
+            </div>
+            <div class="form-group">
+                <span asp-validation-for="Title8"></span>
+                <label asp-for="Title8"></label>
+                <input asp-for="Title8" class="form-control">
+
+                    <label style="margin-left: 10px;" asp-for="Rating8">1</label>
+                    <input type="radio" asp-for="Rating8" value=1>
+                    <label style="margin-left: 10px;" asp-for="Rating8">2</label>
+                    <input type="radio" asp-for="Rating8" value=2>
+                    <label style="margin-left: 10px;" asp-for="Rating8">3</label>
+                    <input type="radio" asp-for="Rating8" value=3>
+                    <label style="margin-left: 10px;" asp-for="Rating8">4</label>
+                    <input type="radio" asp-for="Rating8" value=4> 
+                    <label style="margin-left: 10px;" asp-for="Rating8">5</label>
+                    <input type="radio" asp-for="Rating8" value=5> 
+                    <label style="margin-left: 10px;" asp-for="Rating8">6</label>
+                    <input type="radio" asp-for="Rating8" value=6> 
+                    <label style="margin-left: 10px;" asp-for="Rating8">7</label>
+                    <input type="radio" asp-for="Rating8" value=7> 
+                    <label style="margin-left: 10px;" asp-for="Rating8">8</label>
+                    <input type="radio" asp-for="Rating8" value=8>
+                    <label style="margin-left: 10px;" asp-for="Rating8">9</label>
+                    <input type="radio" asp-for="Rating8" value=9> 
+                    <label style="margin-left: 10px;" asp-for="Rating8">10</label>
+                    <input type="radio" asp-for="Rating8" value=10> 
+            </div>
+        
+
+            <div class="form-group">
+                <span asp-validation-for="DateOfValue"></span>
+                <label asp-for="DateOfValue"></label>
+                <input asp-for="DateOfValue" class="form-control">
+
+                     
+            </div>  
+
+            <div class="form-group">
+                <span asp-validation-for="CoordinatorID"></span>
+                <input asp-for="CoordinatorID" type="hidden" value="@ViewBag.LoggedId">
+            </div> 
+
+           
+            <button type="submit" class="btn btn-outline-danger">Create Values</button>
+        </form>
+</div>

@@ -1,0 +1,61 @@
+@model List<Values>
+	@*
+	<script type="text/javascript" src="graph.js"></script> *@
+	<link rel="stylesheet" href="~/css/style.css"/>
+	<a class="btn btn-outline-danger" href="../CreateValue">Create your values</a>
+	
+
+	<script>
+		window.onload = function () {
+
+			var dataArr = @Html.Raw(Json.Serialize(@Model));
+			var data = [];
+
+
+                ///en akirkisin tolturganin korsotot  ....ushul kod graphty chigarat
+				data.push({ y: dataArr[dataArr.length-1].rating1, label: dataArr[dataArr.length-1].title1 });
+				data.push({ y: dataArr[dataArr.length-1].rating2, label: dataArr[dataArr.length-1].title2 });
+				data.push({ y: dataArr[dataArr.length-1].rating3, label: dataArr[dataArr.length-1].title3 });
+				data.push({ y: dataArr[dataArr.length-1].rating4, label: dataArr[dataArr.length-1].title4 });
+				data.push({ y: dataArr[dataArr.length-1].rating5, label: dataArr[dataArr.length-1].title5 });
+				data.push({ y: dataArr[dataArr.length-1].rating6, label: dataArr[dataArr.length-1].title6 });
+				data.push({ y: dataArr[dataArr.length-1].rating7, label: dataArr[dataArr.length-1].title7 });
+				data.push({ y: dataArr[dataArr.length-1].rating8, label: dataArr[dataArr.length-1].title8 });
+				
+			
+
+			var chart = new CanvasJS.Chart(`chartContainer`, {
+				animationEnabled: true,
+				title: {
+					text: "Visualizing your Life Balance", 
+					fontColor:"#90091F"
+					
+				},
+				axisX: {
+					interval: 1
+				},
+				axisY2: {
+					interlacedColor: "rgba(1,77,101,.2)",
+					gridColor: "rgba(1,77,101,.1)",
+				
+				},
+				data: [{
+					type: "bar",
+					name: "Values",
+					axisYType: "secondary",
+					color: "#e75480",
+					dataPoints: data
+				}]
+			});
+			chart.render();
+		}
+
+
+
+	</script>
+	<a asp-action="LogOut" asp-controller="Home" class="btn btn-outline-danger"> Log Out</a>
+
+	
+
+	<div id="chartContainer" style="height: 700px; width: 100%;"></div>
+	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>

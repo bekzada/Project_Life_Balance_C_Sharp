@@ -1,0 +1,26 @@
+@using LifeBalance.Models;
+@model Login
+<link rel="stylesheet" href="~/css/style.css"/>
+
+
+
+
+<h2>Log In</h2>
+<form asp-controller="Home" asp-action="Login" method="post">
+
+    
+    <label asp-for="LoginEmail"></label>
+    <input class="form-control" asp-for="LoginEmail"><br>
+
+    
+    <label asp-for="LoginPassword"></label>
+    <input class="form-control" asp-for="LoginPassword"><br>
+
+    <div id="errors">
+        <span class="error log-error" asp-validation-for="LoginEmail"></span>
+        <span class="error log-error" asp-validation-for="LoginPassword"></span>
+    </div>
+
+    <input class="btn btn-outline-danger" type="submit" value="Log in">
+</form>
+
